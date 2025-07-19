@@ -1,0 +1,362 @@
+/* Custom Animations and Styles for Dinesh Kumar Portfolio */
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Gradient Background Animation */
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Pulse Animation for Skills */
+@keyframes pulse-skill {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+/* Glitch Effect for Hero Text */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0080;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ffff;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(2px, -2px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+    }
+    80% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+/* Neon Glow Effect */
+.neon-text {
+    color: #fff;
+    text-shadow: 
+        0 0 5px #3b82f6,
+        0 0 10px #3b82f6,
+        0 0 15px #3b82f6,
+        0 0 20px #3b82f6;
+}
+
+/* Particle Animation */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 50%;
+    animation: particle-float 6s infinite linear;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hover Effects */
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+/* Card Animations */
+.card-enter {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: card-enter 0.6s ease forwards;
+}
+
+@keyframes card-enter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: inherit;
+    transform: translateX(-100%);
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar.animate .progress-fill {
+    transform: translateX(0);
+}
+
+/* Loading Dots */
+.loading-dots {
+    display: inline-block;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% {
+        color: rgba(0, 0, 0, 0);
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
+                     .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    40% {
+        color: #3b82f6;
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
+                     .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    60% {
+        text-shadow: .25em 0 0 #3b82f6,
+                     .5em 0 0 rgba(0, 0, 0, 0);
+    }
+    80%, 100% {
+        text-shadow: .25em 0 0 #3b82f6,
+                     .5em 0 0 #3b82f6;
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .text-responsive-xl {
+        font-size: 2rem;
+    }
+    
+    .text-responsive-lg {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark Mode Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Skill Icon Animations */
+.skill-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Form Animations */
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.form-label {
+    transition: all 0.3s ease;
+    transform-origin: left top;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-25px) scale(0.8);
+    color: #3b82f6;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Social Media Icons */
+.social-icon {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover::before {
+    width: 50px;
+    height: 50px;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: #3b82f6;
+}
